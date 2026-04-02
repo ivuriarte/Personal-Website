@@ -1,13 +1,15 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import type { Variants } from "framer-motion";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import {
   ExternalLink,
   Lock,
   CheckCircle2,
   Eye,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 function GithubIcon({ size = 12 }: { size?: number }) {
@@ -18,6 +20,7 @@ function GithubIcon({ size = 12 }: { size?: number }) {
   );
 }
 import { projects } from "@/data/projects";
+import type { Project } from "@/data/projects";
 
 const containerVariants = {
   hidden: {},
@@ -28,6 +31,143 @@ const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
 };
+
+function ProjectCard({ project }: { project: Project }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <motion.article
+      variants={cardVariants}
+      className="group relative flex flex-col rounded-2xl glass border border-zinc-800/60 hover:border-zinc-700/60 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-black/30 gradient-border"
+    >
+      {/* Card top banner */}
+      <div
+        className={`relative h-40 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}
+      >
+        <div className="absolute inset-0 dot-pattern opacity-30" />
+        <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="relative z-10 text-white/10 font-black text-8xl select-none leading-none">
+          0{project.id}
+        </div>
+        {project.isPrivate && (
+          <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-white text-xs font-medium">
+            <Lock size={11} />
+            Private
+          </div>
+        )}
+        {!project.isPrivate && project.liveUrl && (
+          <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-emerald-300 text-xs font-medium">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
+            </span>
+            Live
+          </div>
+        )}
+      </div>
+
+      {/* Card body */}
+      <div className="flex flex-col flex-1 p-5 gap-4">
+        <div>
+          <h3 className="text-zinc-100 font-bold text-lg leading-snug mb-2 group-hover:text-white transition-colors">
+            {project.title}
+          </h3>
+
+          {/* Description with expand/collapse */}
+          <div>
+            <AnimatePresence initial={false}>
+              <motion.p
+                key={expanded ? "expanded" : "collapsed"}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2 }}
+                className={`text-zinc-400 text-sm leading-relaxed ${expanded ? "" : "line-clamp-3"}`}
+              >
+                {project.description}
+              </motion.p>
+            </AnimatePresence>
+            <button
+              onClick={() => setExpanded((v) => !v)}
+              className="mt-1.5 flex items-center gap-1 text-xs font-medium text-amber-400 hover:text-amber-300 transition-colors"
+            >
+              {expanded ? (
+                <>
+                  <ChevronUp size={13} /> Show less
+                </>
+              ) : (
+                <>
+                  <ChevronDown size={13} /> Read more
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Features */}
+        <ul className="space-y-1.5">
+          {project.features.map((f) => (
+            <li key={f} className="flex items-start gap-2 text-zinc-400 text-xs">
+              <CheckCircle2
+                size={13}
+                className="mt-0.5 flex-shrink-0"
+                style={{ color: project.accentColor }}
+              />
+              {f}
+            </li>
+          ))}
+        </ul>
+
+        {/* Tech stack */}
+        <div className="flex flex-wrap gap-1.5">
+          {project.tech.map((t) => (
+            <span
+              key={t}
+              className="px-2 py-0.5 rounded-md bg-zinc-800/70 border border-zinc-700/50 text-zinc-300 text-xs font-medium"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+
+        {/* Action buttons */}
+        <div className="mt-auto pt-3 flex items-center gap-2 flex-wrap border-t border-zinc-800/50">
+          {project.isPrivate ? (
+            <div className="flex items-center gap-2 text-zinc-500 text-xs">
+              <Eye size={13} />
+              <span>UI preview available upon request</span>
+            </div>
+          ) : (
+            <>
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-white transition-all duration-200 hover:opacity-90 btn-glow"
+                  style={{ backgroundColor: project.accentColor }}
+                >
+                  <ExternalLink size={12} />
+                  Live Demo
+                </a>
+              )}
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-300 hover:text-zinc-100 glass border border-zinc-700/50 hover:border-zinc-600/50 transition-all duration-200"
+                >
+                  <GithubIcon size={12} />
+                  Source
+                </a>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+    </motion.article>
+  );
+}
 
 export default function Projects() {
   const ref = useRef<HTMLElement>(null);
@@ -74,119 +214,7 @@ export default function Projects() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {projects.map((project) => (
-            <motion.article
-              key={project.id}
-              variants={cardVariants}
-              className="group relative flex flex-col rounded-2xl glass border border-zinc-800/60 hover:border-zinc-700/60 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-black/30 gradient-border"
-            >
-              {/* Card top banner */}
-              <div
-                className={`relative h-40 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}
-              >
-                {/* Pattern overlay */}
-                <div className="absolute inset-0 dot-pattern opacity-30" />
-                {/* Shimmer */}
-                <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                {/* Project number */}
-                <div className="relative z-10 text-white/10 font-black text-8xl select-none leading-none">
-                  0{project.id}
-                </div>
-
-                {/* Private badge */}
-                {project.isPrivate && (
-                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-white text-xs font-medium">
-                    <Lock size={11} />
-                    Private
-                  </div>
-                )}
-
-                {/* Deployed badge */}
-                {!project.isPrivate && project.liveUrl && (
-                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-emerald-300 text-xs font-medium">
-                    <span className="relative flex h-1.5 w-1.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
-                    </span>
-                    Live
-                  </div>
-                )}
-              </div>
-
-              {/* Card body */}
-              <div className="flex flex-col flex-1 p-5 gap-4">
-                <div>
-                  <h3 className="text-zinc-100 font-bold text-lg leading-snug mb-2 group-hover:text-white transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed line-clamp-3">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Features */}
-                <ul className="space-y-1.5">
-                  {project.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-zinc-400 text-xs">
-                      <CheckCircle2
-                        size={13}
-                        className="mt-0.5 flex-shrink-0"
-                        style={{ color: project.accentColor }}
-                      />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Tech stack */}
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="px-2 py-0.5 rounded-md bg-zinc-800/70 border border-zinc-700/50 text-zinc-300 text-xs font-medium"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Action buttons */}
-                <div className="mt-auto pt-3 flex items-center gap-2 flex-wrap border-t border-zinc-800/50">
-                  {project.isPrivate ? (
-                    <div className="flex items-center gap-2 text-zinc-500 text-xs">
-                      <Eye size={13} />
-                      <span>UI preview available upon request</span>
-                    </div>
-                  ) : (
-                    <>
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-white transition-all duration-200 hover:opacity-90 btn-glow"
-                          style={{ backgroundColor: project.accentColor }}
-                        >
-                          <ExternalLink size={12} />
-                          Live Demo
-                        </a>
-                      )}
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-300 hover:text-zinc-100 glass border border-zinc-700/50 hover:border-zinc-600/50 transition-all duration-200"
-                        >
-                          <GithubIcon size={12} />
-                          Source
-                        </a>
-                      )}
-                    </>
-                  )}
-                </div>
-              </div>
-            </motion.article>
+            <ProjectCard key={project.id} project={project} />
           ))}
         </motion.div>
 
