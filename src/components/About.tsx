@@ -12,7 +12,7 @@ const LINKEDIN_PHOTO =
 const highlights = [
   {
     icon: Briefcase,
-    value: "10+",
+    value: "5+",
     label: "Years Experience",
     color: "text-orange-400",
     bg: "bg-orange-500/10 border-orange-500/20",
@@ -140,7 +140,7 @@ export default function About() {
             <div className="space-y-5 text-zinc-400 leading-relaxed">
               <p>
                 I&apos;m a <span className="text-zinc-200 font-medium">senior developer</span> with
-                over a decade of experience spanning web development, business
+                over 5 years of professional experience spanning web development, business
                 analysis, and agile project management. Currently serving as{" "}
                 <span className="text-zinc-200 font-medium">Business Analyst II at World Vision</span>,
                 I thrive at the intersection of technical precision and strategic
