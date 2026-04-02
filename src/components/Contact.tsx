@@ -150,6 +150,15 @@ export default function Contact() {
             <Send size={15} />
             Send me an email
           </a>
+          <a
+            href="https://www.linkedin.com/messaging/compose/?recipient=ian-vince-uriarte-98887919b"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl glass border border-sky-500/40 hover:border-sky-400/60 text-sky-300 hover:text-sky-200 font-semibold text-sm tracking-wide transition-all duration-200 w-full sm:w-auto justify-center"
+          >
+            <LinkedinIcon size={15} />
+            Message on LinkedIn
+          </a>
           <div className="flex items-center gap-2 text-zinc-500 text-sm">
             <MapPin size={14} />
             <span>Davao City, Philippines</span>
