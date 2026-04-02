@@ -139,30 +139,32 @@ export default function About() {
 
             <div className="space-y-5 text-zinc-400 leading-relaxed">
               <p>
-                My career began in{" "}
-                <span className="text-zinc-200 font-medium">Business Analysis</span> —
-                where I spent years translating complex stakeholder needs into clear,
-                actionable requirements. Currently serving as{" "}
+                My career is grounded in{" "}
+                <span className="text-zinc-200 font-medium">Business Analysis</span> — gathering
+                and validating requirements, mapping business processes, conducting gap
+                analyses, and translating complex stakeholder needs into clear, scoped
+                specifications. As{" "}
                 <span className="text-zinc-200 font-medium">Business Analyst II at World Vision</span>,
-                I sit at the intersection of people, process, and technology every day.
+                I drive initiatives spanning system implementations, process improvements,
+                and cross-functional projects that create measurable organizational impact.
               </p>
               <p>
-                Along the way, I expanded into{" "}
-                <span className="text-zinc-200 font-medium">Agile Project Management</span> and{" "}
-                <span className="text-zinc-200 font-medium">UI/UX Design</span> — learning
-                how to lead cross-functional teams, manage delivery, and design
-                experiences that put users first. That combination of strategic thinking
-                and design sensibility became the foundation of everything I build.
+                That analytical foundation directly sharpens my{" "}
+                <span className="text-zinc-200 font-medium">Agile Project Management</span>{" "}
+                practice. Because I can trace every deliverable back to a validated
+                business requirement, I identify dependencies early, reduce rework, and
+                keep teams relentlessly aligned on outcomes — not just timelines. Add{" "}
+                <span className="text-zinc-200 font-medium">UI/UX Design</span> to the mix,
+                and every solution I oversee is scoped correctly, built with the user in
+                mind, and tied to a clear business case.
               </p>
               <p>
-                Recently, I took the leap into{" "}
-                <span className="text-zinc-200 font-medium">AI-powered development</span>.
-                What started as curiosity became a full transformation — leveraging
-                AI tools, modern frameworks, and my analytical background to build
-                real, deployed applications. I&apos;m not a traditional developer who
-                learned business later. I&apos;m a{" "}
-                <span className="text-amber-300 font-medium">business professional who learned to build</span>{" "}
-                — and that perspective is exactly what makes my work different.
+                The newest chapter is development — using modern frameworks to build and
+                ship the solutions I once only specified. That{" "}
+                <span className="text-amber-300 font-medium">full-cycle ownership</span>{" "}
+                — from business case and requirements through to deployed product — is what
+                makes my profile genuinely different from a traditional developer or a
+                traditional analyst.
               </p>
             </div>
 
@@ -170,11 +172,11 @@ export default function About() {
             <div className="mt-8 flex flex-wrap gap-2">
               {[
                 "Business Analyst II",
+                "Requirements Engineering",
                 "Agile Project Manager",
+                "Stakeholder Management",
                 "UI/UX Design",
-                "Emerging Developer",
-                "AI-Powered Apps",
-                "3D Web Experiences",
+                "Full-Cycle Delivery",
               ].map((tag) => (
                 <span
                   key={tag}

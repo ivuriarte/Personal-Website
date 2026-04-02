@@ -90,12 +90,13 @@ export default function Contact() {
             Let&apos;s Connect
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">
-            Ready to build{" "}
-            <span className="gradient-text">something great?</span>
+            Let&apos;s deliver{" "}
+            <span className="gradient-text">something meaningful.</span>
           </h2>
           <p className="text-zinc-400 max-w-lg mx-auto text-base leading-relaxed">
-            Whether you have a project in mind, want to discuss an opportunity,
-            or just want to say hi — I&apos;d love to hear from you.
+            Whether you need a BA to define scope, a PM to lead delivery, or
+            a developer to build it — I bring all three.
+            Let&apos;s talk about what you&apos;re trying to achieve.
           </p>
         </motion.div>
 

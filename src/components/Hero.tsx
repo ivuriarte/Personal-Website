@@ -193,11 +193,12 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.65 }}
           className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Bridging{" "}
-          <span className="text-amber-300 font-medium">business strategy</span>,{" "}
-          <span className="text-amber-300 font-medium">user experience</span>, and{" "}
-          <span className="text-amber-300 font-medium">AI-powered development</span>{" "}
-          to deliver solutions that are as smart as they are human.
+          A{" "}
+          <span className="text-amber-300 font-medium">Business Analyst&apos;s precision</span>{" "}
+          applied across the full project lifecycle — defining what matters,
+          aligning stakeholders, and{" "}
+          <span className="text-amber-300 font-medium">delivering high-value outcomes</span>{" "}
+          from requirements through to shipped product.
         </motion.p>
 
         {/* CTA Buttons */}
