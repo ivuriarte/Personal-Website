@@ -100,7 +100,7 @@ export default function About() {
                 Ian Vince Uriarte
               </h3>
               <p className="text-sm text-amber-400 font-medium mt-0.5">
-                BA · PM · UX · Developer
+                Analyst · Manager · UX Enthusiast · Builder
               </p>
               <div className="flex items-center justify-center lg:justify-start gap-1.5 mt-2 text-zinc-500 text-xs">
                 <MapPin size={12} />
@@ -132,8 +132,8 @@ export default function About() {
                 About Me
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-zinc-100 leading-tight">
-                Strategy. Design.{" "}
-                <span className="gradient-text">Build. Deliver.</span>
+                Always curious.{" "}
+                <span className="gradient-text">Always venturing.</span>
               </h2>
             </div>
 
@@ -142,29 +142,31 @@ export default function About() {
                 My career is grounded in{" "}
                 <span className="text-zinc-200 font-medium">Business Analysis</span> — gathering
                 and validating requirements, mapping business processes, conducting gap
-                analyses, and translating complex stakeholder needs into clear, scoped
+                analyses, and turning complex stakeholder needs into clear, scoped
                 specifications. As{" "}
                 <span className="text-zinc-200 font-medium">Business Analyst II at World Vision</span>,
                 I drive initiatives spanning system implementations, process improvements,
                 and cross-functional projects that create measurable organizational impact.
               </p>
               <p>
-                That analytical foundation directly sharpens my{" "}
-                <span className="text-zinc-200 font-medium">Agile Project Management</span>{" "}
-                practice. Because I can trace every deliverable back to a validated
-                business requirement, I identify dependencies early, reduce rework, and
-                keep teams relentlessly aligned on outcomes — not just timelines. Add{" "}
-                <span className="text-zinc-200 font-medium">UI/UX Design</span> to the mix,
-                and every solution I oversee is scoped correctly, built with the user in
-                mind, and tied to a clear business case.
+                That analytical foundation naturally led me into{" "}
+                <span className="text-zinc-200 font-medium">Agile Project Management</span> —
+                where being able to trace every deliverable back to a validated business
+                requirement means fewer surprises, less rework, and teams that stay aligned
+                on outcomes rather than just timelines. Along the way I developed a genuine
+                interest in{" "}
+                <span className="text-zinc-200 font-medium">user experience</span> — not as a
+                designer, but as someone who cares deeply about how people interact with
+                the things we build.
               </p>
               <p>
-                The newest chapter is development — using modern frameworks to build and
-                ship the solutions I once only specified. That{" "}
-                <span className="text-amber-300 font-medium">full-cycle ownership</span>{" "}
-                — from business case and requirements through to deployed product — is what
-                makes my profile genuinely different from a traditional developer or a
-                traditional analyst.
+                Now I&apos;m venturing into{" "}
+                <span className="text-zinc-200 font-medium">software development</span> — using
+                modern frameworks to build and ship the solutions I once only specified.
+                Each role I&apos;ve stepped into has been an intentional expansion, and{" "}
+                <span className="text-amber-300 font-medium">that full-cycle ownership</span>{" "}
+                — from business case through to deployed product — is what makes my
+                perspective genuinely different.
               </p>
             </div>
 
@@ -175,8 +177,8 @@ export default function About() {
                 "Requirements Engineering",
                 "Agile Project Manager",
                 "Stakeholder Management",
-                "UI/UX Design",
-                "Full-Cycle Delivery",
+                "UX Enthusiast",
+                "Aspiring Developer",
               ].map((tag) => (
                 <span
                   key={tag}

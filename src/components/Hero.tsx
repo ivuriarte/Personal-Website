@@ -23,8 +23,8 @@ function LinkedinIcon({ size = 20 }: { size?: number }) {
 const ROLES = [
   "Business Analyst II",
   "Agile Project Manager",
-  "UI/UX Designer",
-  "AI-Powered Developer",
+  "UX Enthusiast",
+  "Aspiring Developer",
 ];
 
 function useTypewriter(words: string[], speed = 80, pause = 2000) {
@@ -174,8 +174,8 @@ export default function Hero() {
           {[
             { label: "Business Analyst II", color: "border-amber-500/40 text-amber-300 bg-amber-500/8" },
             { label: "Agile Project Manager", color: "border-orange-500/40 text-orange-300 bg-orange-500/8" },
-            { label: "UI/UX Designer", color: "border-rose-500/40 text-rose-300 bg-rose-500/8" },
-            { label: "AI-Powered Developer", color: "border-zinc-600/60 text-zinc-300 bg-zinc-700/20" },
+            { label: "UX Enthusiast", color: "border-rose-500/40 text-rose-300 bg-rose-500/8" },
+            { label: "Aspiring Developer", color: "border-zinc-600/60 text-zinc-300 bg-zinc-700/20" },
           ].map((role) => (
             <span
               key={role.label}
