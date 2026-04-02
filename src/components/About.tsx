@@ -100,7 +100,7 @@ export default function About() {
                 Ian Vince Uriarte
               </h3>
               <p className="text-sm text-amber-400 font-medium mt-0.5">
-                Analyst · Manager · UX Enthusiast · Builder
+                Analyst · Manager · UI/UX Enthusiast · Builder
               </p>
               <div className="flex items-center justify-center lg:justify-start gap-1.5 mt-2 text-zinc-500 text-xs">
                 <MapPin size={12} />
@@ -177,7 +177,7 @@ export default function About() {
                 "Requirements Engineering",
                 "Agile Project Manager",
                 "Stakeholder Management",
-                "UX Enthusiast",
+                "UI/UX Enthusiast",
                 "Aspiring Developer",
               ].map((tag) => (
                 <span

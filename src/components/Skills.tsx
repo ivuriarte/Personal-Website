@@ -27,7 +27,7 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    label: "UX & Design Thinking",
+    label: "UI/UX UX & Design Thinking Design Thinking",
     color: "text-rose-400",
     bgColor: "bg-rose-500/10 border-rose-500/20",
     skills: [
