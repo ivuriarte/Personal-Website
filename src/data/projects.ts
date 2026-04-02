@@ -42,6 +42,7 @@ export const projects: Project[] = [
     liveUrl: "https://snakes-and-ladders-3d.vercel.app",
     githubUrl: "https://github.com/ivuriarte/snakes-and-ladders-3d",
     isPrivate: false,
+    image: "/screenshots/snakes-and-ladders.png",
     gradient: "from-emerald-500 via-teal-500 to-cyan-500",
     accentColor: "#10b981",
     features: [
