@@ -160,10 +160,10 @@ export default function About() {
                 the things we build.
               </p>
               <p>
-                Now I&apos;m venturing into{" "}
-                <span className="text-zinc-200 font-medium">software development</span> — using
-                modern frameworks to build and ship the solutions I once only specified.
-                Each role I&apos;ve stepped into has been an intentional expansion, and{" "}
+                Most recently, I expanded into{" "}
+                <span className="text-zinc-200 font-medium">web development</span> — building
+                and shipping the solutions I once only specified. Each role I&apos;ve taken
+                on has been an intentional step forward, and{" "}
                 <span className="text-amber-300 font-medium">that full-cycle ownership</span>{" "}
                 — from business case through to deployed product — is what makes my
                 perspective genuinely different.
@@ -178,7 +178,7 @@ export default function About() {
                 "Agile Project Manager",
                 "Stakeholder Management",
                 "UI/UX Enthusiast",
-                "Aspiring Developer",
+                "Web Developer",
               ].map((tag) => (
                 <span
                   key={tag}
