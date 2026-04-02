@@ -161,7 +161,7 @@ export default function About() {
               </p>
               <p>
                 Most recently, I expanded into{" "}
-                <span className="text-zinc-200 font-medium">web and mobile development</span> — building
+                <span className="text-zinc-200 font-medium">AI application development</span> — building
                 and shipping the solutions I once only specified. Each role I&apos;ve taken
                 on has been an intentional step forward, and{" "}
                 <span className="text-amber-300 font-medium">that full-cycle ownership</span>{" "}
@@ -178,7 +178,7 @@ export default function About() {
                 "Agile Project Manager",
                 "Stakeholder Management",
                 "UI/UX Enthusiast",
-                "Web and Mobile Developer",
+                "AI Application Developer",
               ].map((tag) => (
                 <span
                   key={tag}
