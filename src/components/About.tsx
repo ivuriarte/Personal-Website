@@ -100,7 +100,7 @@ export default function About() {
                 Ian Vince Uriarte
               </h3>
               <p className="text-sm text-amber-400 font-medium mt-0.5">
-                Business Analyst → AI-Powered Developer
+                BA · PM · UX · Developer
               </p>
               <div className="flex items-center justify-center lg:justify-start gap-1.5 mt-2 text-zinc-500 text-xs">
                 <MapPin size={12} />
@@ -132,8 +132,8 @@ export default function About() {
                 About Me
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-zinc-100 leading-tight">
-                From analyst{" "}
-                <span className="gradient-text">to builder</span>
+                Strategy. Design.{" "}
+                <span className="gradient-text">Build. Deliver.</span>
               </h2>
             </div>
 

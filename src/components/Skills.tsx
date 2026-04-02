@@ -13,6 +13,46 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
+    label: "Business & Agile",
+    color: "text-amber-400",
+    bgColor: "bg-amber-500/10 border-amber-500/20",
+    skills: [
+      "Business Analysis",
+      "Agile / Scrum",
+      "Stakeholder Management",
+      "Requirements Gathering",
+      "Process Optimization",
+      "JIRA / Confluence",
+      "User Story Mapping",
+    ],
+  },
+  {
+    label: "UX & Product Design",
+    color: "text-rose-400",
+    bgColor: "bg-rose-500/10 border-rose-500/20",
+    skills: [
+      "User Research",
+      "Wireframing",
+      "Prototyping",
+      "Figma",
+      "Design Systems",
+      "Usability Testing",
+    ],
+  },
+  {
+    label: "AI & Emerging",
+    color: "text-purple-400",
+    bgColor: "bg-purple-500/10 border-purple-500/20",
+    skills: [
+      "AI-Assisted Development",
+      "Prompt Engineering",
+      "GitHub Copilot",
+      "LLM Integration",
+      "Procedural Audio",
+      "Location-Based Services",
+    ],
+  },
+  {
     label: "Frontend & 3D",
     color: "text-orange-400",
     bgColor: "bg-orange-500/10 border-orange-500/20",
@@ -22,9 +62,7 @@ const skillCategories: SkillCategory[] = [
       "Three.js",
       "TypeScript",
       "JavaScript (ES6+)",
-      "HTML5 / CSS3",
       "Tailwind CSS",
-      "GSAP",
       "Framer Motion",
     ],
   },
@@ -47,37 +85,11 @@ const skillCategories: SkillCategory[] = [
     bgColor: "bg-cyan-500/10 border-cyan-500/20",
     skills: [
       "Git & GitHub",
-      "Vite",
       "Vercel",
       "VS Code",
-      "Figma",
       "Postman",
-    ],
-  },
-  {
-    label: "Business & Agile",
-    color: "text-amber-400",
-    bgColor: "bg-amber-500/10 border-amber-500/20",
-    skills: [
-      "Business Analysis",
-      "Agile / Scrum",
-      "Stakeholder Management",
-      "Requirements Gathering",
-      "Process Optimization",
-      "JIRA / Confluence",
-    ],
-  },
-  {
-    label: "AI & Emerging",
-    color: "text-purple-400",
-    bgColor: "bg-purple-500/10 border-purple-500/20",
-    skills: [
-      "AI-Assisted Development",
-      "Prompt Engineering",
-      "GitHub Copilot",
-      "LLM Integration",
-      "Procedural Audio",
-      "Location-Based Services",
+      "Notion",
+      "Vite",
     ],
   },
 ];
@@ -115,11 +127,11 @@ export default function Skills() {
             Expertise
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">
-            Skills &amp; <span className="gradient-text">Tech Stack</span>
+            Skills &amp; <span className="gradient-text">Expertise</span>
           </h2>
           <p className="text-zinc-400 max-w-xl mx-auto text-base">
-            A versatile set of tools and technologies I leverage to build
-            high-quality, scalable applications — end to end.
+            Five years across business analysis, project management, UX design,
+            and AI-powered development — across every phase of the product lifecycle.
           </p>
         </motion.div>
 

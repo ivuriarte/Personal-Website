@@ -157,11 +157,33 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-xl md:text-2xl font-medium text-zinc-300 mb-6 h-10 flex items-center justify-center gap-2"
+          className="text-xl md:text-2xl font-medium text-zinc-300 mb-4 h-10 flex items-center justify-center gap-2"
         >
           <span className="text-orange-400 font-mono">&gt;</span>
           <span>{roleText}</span>
           <span className="cursor-blink text-orange-400 font-thin">|</span>
+        </motion.div>
+
+        {/* Static role pills — always visible */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.58 }}
+          className="flex flex-wrap items-center justify-center gap-2 mb-8"
+        >
+          {[
+            { label: "Business Analyst II", color: "border-amber-500/40 text-amber-300 bg-amber-500/8" },
+            { label: "Agile Project Manager", color: "border-orange-500/40 text-orange-300 bg-orange-500/8" },
+            { label: "UI/UX Designer", color: "border-rose-500/40 text-rose-300 bg-rose-500/8" },
+            { label: "AI-Powered Developer", color: "border-zinc-600/60 text-zinc-300 bg-zinc-700/20" },
+          ].map((role) => (
+            <span
+              key={role.label}
+              className={`px-3 py-1 rounded-full text-xs font-medium border backdrop-blur-sm ${role.color}`}
+            >
+              {role.label}
+            </span>
+          ))}
         </motion.div>
 
         {/* Tagline */}
@@ -171,11 +193,11 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.65 }}
           className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Strategy-driven developer crafting{" "}
-          <span className="text-amber-300 font-medium">
-            AI-powered, experience-first
-          </span>{" "}
-          applications that solve real problems — from concept to deployment.
+          Bridging{" "}
+          <span className="text-amber-300 font-medium">business strategy</span>,{" "}
+          <span className="text-amber-300 font-medium">user experience</span>, and{" "}
+          <span className="text-amber-300 font-medium">AI-powered development</span>{" "}
+          to deliver solutions that are as smart as they are human.
         </motion.p>
 
         {/* CTA Buttons */}
