@@ -178,7 +178,7 @@ export default function About() {
                 "Agile Project Manager",
                 "Stakeholder Management",
                 "UI/UX Enthusiast",
-                "Web Web Developer Mobile Developer",
+                "Web and Mobile Developer",
               ].map((tag) => (
                 <span
                   key={tag}

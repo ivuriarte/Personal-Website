@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ian Vince Uriarte | Portfolio",
   description:
-    "Business Analyst II, Agile Project Manager & AI-Powered Web Web Developer Mobile Developer from Davao City, PH. Building intelligent, experience-first digital solutions.",
+    "Business Analyst II, Agile Project Manager & AI-Powered Web and Mobile Developer from Davao City, PH. Building intelligent, experience-first digital solutions.",
   keywords: [
     "Ian Vince Uriarte",
     "portfolio",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ian Vince Uriarte | Portfolio",
     description:
-      "AI-Powered Web Web Developer Mobile Developer & Business Analyst crafting experience-first digital solutions.",
+      "AI-Powered Web and Mobile Developer & Business Analyst crafting experience-first digital solutions.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "Ian Vince Uriarte | Portfolio",
-    description: "AI-Powered Web Web Developer Mobile Developer & Business Analyst",
+    description: "AI-Powered Web and Mobile Developer & Business Analyst",
   },
 };
 
