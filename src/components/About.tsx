@@ -100,7 +100,7 @@ export default function About() {
                 Ian Vince Uriarte
               </h3>
               <p className="text-sm text-amber-400 font-medium mt-0.5">
-                AI-Powered Web Developer
+                Business Analyst → AI-Powered Developer
               </p>
               <div className="flex items-center justify-center lg:justify-start gap-1.5 mt-2 text-zinc-500 text-xs">
                 <MapPin size={12} />
@@ -132,37 +132,37 @@ export default function About() {
                 About Me
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-zinc-100 leading-tight">
-                Where strategy{" "}
-                <span className="gradient-text">meets code</span>
+                From analyst{" "}
+                <span className="gradient-text">to builder</span>
               </h2>
             </div>
 
             <div className="space-y-5 text-zinc-400 leading-relaxed">
               <p>
-                I&apos;m a <span className="text-zinc-200 font-medium">senior developer</span> with
-                over 5 years of professional experience spanning web development, business
-                analysis, and agile project management. Currently serving as{" "}
+                My career began in{" "}
+                <span className="text-zinc-200 font-medium">Business Analysis</span> —
+                where I spent years translating complex stakeholder needs into clear,
+                actionable requirements. Currently serving as{" "}
                 <span className="text-zinc-200 font-medium">Business Analyst II at World Vision</span>,
-                I thrive at the intersection of technical precision and strategic
-                thinking — turning complex requirements into polished, user-first
-                digital products.
+                I sit at the intersection of people, process, and technology every day.
               </p>
               <p>
-                My journey has taken me from structured business analysis and
-                process optimization to building fully immersive{" "}
-                <span className="text-zinc-200 font-medium">3D web experiences</span> and{" "}
-                <span className="text-zinc-200 font-medium">
-                  AI-powered applications
-                </span>{" "}
-                that solve real-world problems. I pride myself on writing clean,
-                maintainable code backed by a deep understanding of the user
-                journey.
+                Along the way, I expanded into{" "}
+                <span className="text-zinc-200 font-medium">Agile Project Management</span> and{" "}
+                <span className="text-zinc-200 font-medium">UI/UX Design</span> — learning
+                how to lead cross-functional teams, manage delivery, and design
+                experiences that put users first. That combination of strategic thinking
+                and design sensibility became the foundation of everything I build.
               </p>
               <p>
-                When I&apos;m not crafting interactive experiences, I&apos;m exploring
-                emerging technologies, diving into AI tooling, and applying agile
-                methodologies to ship faster and smarter — always focused on
-                delivering software that feels as good as it functions.
+                Recently, I took the leap into{" "}
+                <span className="text-zinc-200 font-medium">AI-powered development</span>.
+                What started as curiosity became a full transformation — leveraging
+                AI tools, modern frameworks, and my analytical background to build
+                real, deployed applications. I&apos;m not a traditional developer who
+                learned business later. I&apos;m a{" "}
+                <span className="text-amber-300 font-medium">business professional who learned to build</span>{" "}
+                — and that perspective is exactly what makes my work different.
               </p>
             </div>
 
@@ -171,8 +171,9 @@ export default function About() {
               {[
                 "Business Analyst II",
                 "Agile Project Manager",
-                "AI-Powered Developer",
                 "UI/UX Design",
+                "Emerging Developer",
+                "AI-Powered Apps",
                 "3D Web Experiences",
               ].map((tag) => (
                 <span

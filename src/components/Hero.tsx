@@ -21,10 +21,10 @@ function LinkedinIcon({ size = 20 }: { size?: number }) {
 }
 
 const ROLES = [
-  "AI-Powered Web Developer",
-  "Agile Project Manager",
   "Business Analyst II",
-  "UI/UX Enthusiast",
+  "Agile Project Manager",
+  "UI/UX Designer",
+  "AI-Powered Developer",
 ];
 
 function useTypewriter(words: string[], speed = 80, pause = 2000) {
