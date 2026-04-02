@@ -1,8 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Mail, ChevronDown } from "lucide-react";
+
+function LinkedinIcon({ size = 15 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -14,11 +22,23 @@ const navLinks = [
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isHireOpen, setIsHireOpen] = useState(false);
+  const hireRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (hireRef.current && !hireRef.current.contains(e.target as Node)) {
+        setIsHireOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const handleNavClick = (href: string) => {
@@ -71,12 +91,49 @@ export default function Navigation() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <a
-              href="mailto:ivvuriarte@gmail.com"
-              className="px-4 py-2 text-sm font-medium rounded-lg bg-orange-600 hover:bg-orange-500 text-white transition-all duration-200 btn-glow"
-            >
-              Hire Me
-            </a>
+            <div ref={hireRef} className="relative">
+              <button
+                onClick={() => setIsHireOpen((v) => !v)}
+                className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg bg-orange-600 hover:bg-orange-500 text-white transition-all duration-200 btn-glow"
+              >
+                Hire Me
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${isHireOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              <AnimatePresence>
+                {isHireOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 6, scale: 0.97 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute right-0 mt-2 w-52 rounded-xl glass border border-zinc-700/60 shadow-xl shadow-black/40 overflow-hidden z-50"
+                  >
+                    <a
+                      href="mailto:ivvuriarte@gmail.com"
+                      onClick={() => setIsHireOpen(false)}
+                      className="flex items-center gap-3 px-4 py-3 text-sm text-zinc-200 hover:bg-zinc-700/40 hover:text-amber-300 transition-all duration-150"
+                    >
+                      <Mail size={15} className="text-amber-400" />
+                      Send an Email
+                    </a>
+                    <div className="h-px bg-zinc-700/50" />
+                    <a
+                      href="https://www.linkedin.com/messaging/compose/?recipient=ian-vince-uriarte-98887919b"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsHireOpen(false)}
+                      className="flex items-center gap-3 px-4 py-3 text-sm text-zinc-200 hover:bg-zinc-700/40 hover:text-sky-300 transition-all duration-150"
+                    >
+                      <LinkedinIcon size={15} />
+                      Message on LinkedIn
+                    </a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
 
           {/* Mobile toggle */}
@@ -111,13 +168,24 @@ export default function Navigation() {
                   </button>
                 </li>
               ))}
-              <li className="pt-2 pb-1">
+              <li className="pt-2 pb-1 flex flex-col gap-2">
                 <a
                   href="mailto:ivvuriarte@gmail.com"
                   onClick={() => setIsMobileOpen(false)}
-                  className="block w-full text-center px-4 py-3 rounded-lg bg-orange-600 hover:bg-orange-500 text-white text-sm font-medium transition-all btn-glow"
+                  className="flex items-center gap-3 w-full px-4 py-3 rounded-lg bg-orange-600 hover:bg-orange-500 text-white text-sm font-medium transition-all btn-glow"
                 >
-                  Hire Me
+                  <Mail size={15} />
+                  Hire Me — Send an Email
+                </a>
+                <a
+                  href="https://www.linkedin.com/messaging/compose/?recipient=ian-vince-uriarte-98887919b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="flex items-center gap-3 w-full px-4 py-3 rounded-lg glass border border-sky-500/40 text-sky-300 hover:text-sky-200 text-sm font-medium transition-all"
+                >
+                  <LinkedinIcon size={15} />
+                  Hire Me — Message on LinkedIn
                 </a>
               </li>
             </ul>
