@@ -42,13 +42,27 @@ function ProjectCard({ project }: { project: Project }) {
     >
       {/* Card top banner */}
       <div
-        className={`relative h-40 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}
+        className={`relative h-44 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}
       >
-        <div className="absolute inset-0 dot-pattern opacity-30" />
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={`${project.title} screenshot`}
+            className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <>
+            <div className="absolute inset-0 dot-pattern opacity-30" />
+            <div className="relative z-10 text-white/10 font-black text-8xl select-none leading-none">
+              0{project.id}
+            </div>
+          </>
+        )}
+        {/* Gradient overlay on images for badge legibility */}
+        {project.image && (
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+        )}
         <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="relative z-10 text-white/10 font-black text-8xl select-none leading-none">
-          0{project.id}
-        </div>
         {project.isPrivate && (
           <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-white text-xs font-medium">
             <Lock size={11} />

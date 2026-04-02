@@ -10,6 +10,7 @@ export interface Project {
   gradient: string;
   accentColor: string;
   features: string[];
+  image?: string;
 }
 
 export const projects: Project[] = [
@@ -22,6 +23,7 @@ export const projects: Project[] = [
     liveUrl: "https://tic-tac-toe-3d-vert.vercel.app",
     githubUrl: "https://github.com/ivuriarte/tic-tac-toe-3d",
     isPrivate: false,
+    image: "/screenshots/tic-tac-toe.png",
     gradient: "from-indigo-500 via-purple-500 to-violet-600",
     accentColor: "#6366f1",
     features: [
@@ -56,6 +58,7 @@ export const projects: Project[] = [
       "A smart parking reservation platform designed for busy urban environments. Users can discover, reserve, and manage parking spaces in real time — improving convenience for drivers and maximizing utilization for space owners.",
     tech: ["Mobile App", "Web App", "Location Services", "Real-Time Data"],
     isPrivate: true,
+    image: "/screenshots/park-your.png",
     badge: "Private",
     gradient: "from-rose-600 via-pink-600 to-fuchsia-600",
     accentColor: "#e11d48",
