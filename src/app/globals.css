@@ -1,26 +1,102 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #080808;
+  color: #f5f5f5;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f97316, #e11d48);
+  border-radius: 2px;
+}
+
+::selection {
+  background: rgba(249, 115, 22, 0.28);
+  color: #f5f5f5;
+}
+
+/* ─── Gradient text (Ember) ──────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #fbbf24 0%, #f97316 45%, #e11d48 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glass ──────────────────────────────────── */
+.glass {
+  background: rgba(18, 18, 18, 0.80);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(249, 115, 22, 0.12);
+}
+
+/* ─── Glow button ────────────────────────────── */
+.btn-glow {
+  box-shadow: 0 0 22px rgba(249, 115, 22, 0.45), inset 0 0 12px rgba(249, 115, 22, 0.10);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-glow:hover {
+  box-shadow: 0 0 42px rgba(249, 115, 22, 0.70), inset 0 0 18px rgba(249, 115, 22, 0.18);
+  transform: translateY(-2px);
+}
+
+/* ─── Grid background ────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(249, 115, 22, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ─── Dot pattern ────────────────────────────── */
+.dot-pattern {
+  background-image: radial-gradient(rgba(249, 115, 22, 0.20) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ─── Animated gradient border ───────────────── */
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.gradient-border-animated {
+  background: linear-gradient(135deg, #fbbf24, #f97316, #e11d48, #fbbf24);
+  background-size: 300% 300%;
+  animation: gradient-shift 5s ease infinite;
+}
+
+/* ─── Float ──────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+.float-animation { animation: float 5s ease-in-out infinite; }
+
+/* ─── Typewriter cursor ──────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.cursor-blink { animation: blink 1s step-end infinite; }
+
+/* ─── Section padding ────────────────────────── */
+.section-padding { padding: 6rem 1.5rem; }
+@media (min-width: 768px) {
+  .section-padding { padding: 8rem 2rem; }
 }
