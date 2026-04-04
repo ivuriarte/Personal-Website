@@ -19,6 +19,7 @@ function GithubIcon({ size = 12 }: { size?: number }) {
     </svg>
   );
 }
+import Image from "next/image";
 import { projects } from "@/data/projects";
 import type { Project } from "@/data/projects";
 
@@ -45,10 +46,12 @@ function ProjectCard({ project }: { project: Project }) {
         className={`relative h-44 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}
       >
         {project.image ? (
-          <img
+          <Image
             src={project.image}
             alt={`${project.title} screenshot`}
-            className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            fill
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
           <>
