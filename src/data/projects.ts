@@ -20,8 +20,8 @@ export const projects: Project[] = [
     description:
       "An AI-powered OSCE coach that lets medical students practise clinical stations with simulated patients. Features real-time chat-based consultations, structured rubric evaluation, and detailed performance analytics across specialties.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Claude AI", "Zustand", "React Query"],
-    githubUrl: "https://github.com/ivuriarte/MarCoach",
-    isPrivate: false,
+    isPrivate: true,
+    badge: "Private",
     gradient: "from-sky-500 via-blue-600 to-indigo-700",
     accentColor: "#0ea5e9",
     features: [
