@@ -121,7 +121,7 @@ export default function Navigation() {
                     </a>
                     <div className="h-px bg-zinc-700/50" />
                     <a
-                      href="https://www.linkedin.com/messaging/compose/?recipient=ian-vince-uriarte-98887919b"
+                      href="https://www.linkedin.com/in/ian-vince-uriarte-98887919b"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setIsHireOpen(false)}
@@ -178,7 +178,7 @@ export default function Navigation() {
                   Hire Me — Send an Email
                 </a>
                 <a
-                  href="https://www.linkedin.com/messaging/compose/?recipient=ian-vince-uriarte-98887919b"
+                  href="https://www.linkedin.com/in/ian-vince-uriarte-98887919b"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMobileOpen(false)}

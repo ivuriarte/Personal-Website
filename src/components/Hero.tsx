@@ -34,12 +34,13 @@ function useTypewriter(words: string[], speed = 80, pause = 2000) {
 
   useEffect(() => {
     const current = words[wordIndex];
+    let pauseTimeout: ReturnType<typeof setTimeout>;
     const timeout = setTimeout(
       () => {
         if (!isDeleting) {
           setDisplayText(current.substring(0, displayText.length + 1));
           if (displayText.length + 1 === current.length) {
-            setTimeout(() => setIsDeleting(true), pause);
+            pauseTimeout = setTimeout(() => setIsDeleting(true), pause);
           }
         } else {
           setDisplayText(current.substring(0, displayText.length - 1));
@@ -51,7 +52,10 @@ function useTypewriter(words: string[], speed = 80, pause = 2000) {
       },
       isDeleting ? speed / 2 : speed
     );
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+      clearTimeout(pauseTimeout);
+    };
   }, [displayText, isDeleting, wordIndex, words, speed, pause]);
 
   return displayText;
