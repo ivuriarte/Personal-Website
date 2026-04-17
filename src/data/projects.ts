@@ -15,6 +15,23 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 4,
+    title: "MarCoach",
+    description:
+      "An AI-powered OSCE coach that lets medical students practise clinical stations with simulated patients. Features real-time chat-based consultations, structured rubric evaluation, and detailed performance analytics across specialties.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Claude AI", "Zustand", "React Query"],
+    githubUrl: "https://github.com/ivuriarte/MarCoach",
+    isPrivate: false,
+    gradient: "from-sky-500 via-blue-600 to-indigo-700",
+    accentColor: "#0ea5e9",
+    features: [
+      "AI-powered patient simulation",
+      "Rubric-based structured feedback",
+      "Progress tracking & analytics",
+      "Multi-specialty OSCE stations",
+    ],
+  },
+  {
     id: 1,
     title: "Tic-Tac-Toe 3D",
     description:
