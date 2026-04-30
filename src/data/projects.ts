@@ -15,6 +15,25 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 5,
+    title: "Dentra AI",
+    description:
+      "An AI-powered clinical intelligence platform for dental practices. Generates differential diagnoses with ICD-10 codes, treatment plans, and fee estimates from structured patient input — while flagging drug allergies and surfacing patient history in real time. Bundled with patient management, billing, retention, and calendar modules for end-to-end clinic operations.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "GPT-4o", "Supabase", "React"],
+    githubUrl: "https://github.com/ivuriarte/Dentra-AI",
+    isPrivate: true,
+    image: "/screenshots/dentra-ai.png",
+    badge: "Private",
+    gradient: "from-cyan-500 via-sky-600 to-blue-700",
+    accentColor: "#06b6d4",
+    features: [
+      "AI differential diagnoses with ICD-10 codes",
+      "Symptom, clinical sign & history matching",
+      "Allergy alerts & treatment recommendations",
+      "Integrated patients, billing & calendar suite",
+    ],
+  },
+  {
     id: 4,
     title: "MarCoach",
     description:
