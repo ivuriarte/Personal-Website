@@ -38,7 +38,7 @@ export const projects: Project[] = [
     title: "MarCoach",
     description:
       "An AI-powered OSCE coach that lets medical students practise clinical stations with simulated patients. Features real-time chat-based consultations, structured rubric evaluation, and detailed performance analytics across specialties.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Claude AI", "Zustand", "React Query"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "GPT-4o", "Zustand", "React Query"],
     isPrivate: true,
     image: "/screenshots/marcoach.png",
     badge: "Private",
