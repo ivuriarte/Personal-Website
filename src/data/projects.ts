@@ -15,6 +15,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 6,
+    title: "Business Project Consultant",
+    description:
+      "A GitHub Copilot skill that gives developers the full structured thinking of a Business Analyst, Product Owner, and Project Manager — from a raw idea to a developer-ready backlog, phased plan, and actionable prompts. Combines interactive Python wizards with a native Copilot Chat interface to produce prioritised backlogs, requirements docs, Mermaid Gantt charts, and Greatest Value Prompts.",
+    tech: ["GitHub Copilot", "Python", "Markdown", "MoSCoW", "GIVEN/WHEN/THEN", "Makefile"],
+    githubUrl: "https://github.com/ivuriarte/Business-Project-Consultant-Skill",
+    isPrivate: false,
+    image: "/screenshots/bpc-skill.png",
+    gradient: "from-violet-500 via-purple-600 to-indigo-700",
+    accentColor: "#7c3aed",
+    features: [
+      "BA/PM/PO structured thinking in one skill",
+      "Requirements elicitor, backlog wizard & project planner",
+      "Greatest Value Prompt via value-scoring matrix",
+      "Phased plan with Mermaid Gantt chart output",
+    ],
+  },
+  {
     id: 5,
     title: "Dentra AI",
     description:
